@@ -261,11 +261,11 @@ class DrumMachine extends React.Component {
                 <div id="controls-container">
                     <h2>fCC Drum Machine</h2>
                     <Display name={this.state.displayContent} />
-                    <p class="machine-text">Power on/off:</p>
+                    <p className="machine-text">Power on/off:</p>
                     <Power power={this.powerOnOff} />
-                    <p class="machine-text">Change bank:</p>
+                    <p className="machine-text">Change bank:</p>
                     <Switch change={this.changeBank} />
-                    <p class="machine-text">Volume:</p>
+                    <p className="machine-text">Volume:</p>
                     <Volume change={this.handleVolumeChange} />
                 </div>
             </div>
@@ -301,9 +301,9 @@ const Display = props => {
 // Define functional component for the bank switch
 const Switch = props => {
     return (
-        <label class="switch">
+        <label className="switch">
             <input id="bank-switch" type="checkbox" />
-            <span onClick={props.change} class="slider-2 round"></span>
+            <span onClick={props.change} className="slider-2 round"></span>
         </label>
     )
 };
@@ -311,9 +311,9 @@ const Switch = props => {
 // Define functional component for the power switch
 const Power = props => {
     return (
-        <label class="switch">
+        <label className="switch">
             <input id="power-switch" type="checkbox" />
-            <span onClick={props.power} class="slider round"></span>
+            <span onClick={props.power} className="slider round"></span>
         </label>
     )
 };
@@ -326,4 +326,6 @@ const Volume = props => {
 };
 
 // Render the app to the DOM
-ReactDOM.render(<DrumMachine />, document.getElementById("app"));
+const rootNode = document.getElementById('app');
+const root = ReactDOM.createRoot(rootNode);
+root.render(React.createElement(DrumMachine));
