@@ -18,8 +18,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 // Ensure FCC test suite is set to correct project
 var projectName = "drum-machine";
 localStorage.setItem("example_project", "Drum Machine");
-var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioCtx = new AudioContext();
 
 // Define variables to hold each bank of pads
 var bankOne = [{

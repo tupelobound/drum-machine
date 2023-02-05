@@ -2,9 +2,6 @@
 const projectName = "drum-machine";
 localStorage.setItem("example_project", "Drum Machine");
 
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioCtx = new AudioContext();
-
 // Define variables to hold each bank of pads
 const bankOne = [
     {
