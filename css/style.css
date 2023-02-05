@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P|Turret+Road&display=swap');
+
+body {
+    background-color: #C2B8A5;
+    padding-top: 50px;
+}
+
+h1 {
+    font-family: 'Turret Road', cursive;
+    text-align: center;
+}
+
+#drum-machine {
+    width: 800px;
+    margin: 0px auto;
+    background-color: #767064;
+    display: grid;
+    grid-template-columns: 490px auto;
+    justify-items: center;
+    background: linear-gradient(to top,
+            #3A3732,
+            #555555 96%,
+            #8F8D8A 98%,
+            #555555);
+    border-radius: 25px;
+    box-shadow: 12px 12px 40px, inset 10px -20px 40px #1D1F20;
+}
+
+#pad-container {
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#controls-container {
+    display: grid;
+}
+
+a {
+    text-decoration: none;
+}
+
+.drum-pad {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    font-family: 'Turret Road', cursive;
+    color: #DED9D5;
+    font-size: 20px;
+    height: 120px;
+    width: 120px;
+    background: linear-gradient(to top,
+            #161514,
+            #2A2829);
+    border-radius: 10px;
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-bottom: 4px solid black;
+    border-top: 2px solid black;
+}
+
+.drum-pad:active,
+.drum-pad.active {
+    border-top: 3px solid black;
+    border-bottom: 5px solid black;
+    background: linear-gradient(to top,
+            #161514,
+            #2A2829 70%);
+    height: 118px;
+}
+
+#display {
+    height: 60px;
+    width: 250px;
+    border-width: 12px;
+    border-style: solid;
+    border-color: #282626 #282626 #383535 #282626;
+    border-radius: 10px;
+    background: linear-gradient(to bottom left,
+            #3D62B0,
+            #5CA4FF);
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-right: 20px;
+}
+
+h2 {
+    margin-top: 40px;
+    align-self: top;
+    text-align: center;
+    font-family: 'Turret Road', cursive;
+    color: white;
+}
+
+#volume-slider {
+    margin: 0px 40px 50px 20px;
+}
+
+.machine-text {
+    color: white;
+    font-family: 'Turret Road', cursive;
+    margin-bottom: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider,
+.slider-2 {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before,
+.slider-2:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #6ae4fc;
+}
+
+.slider-2.active {
+    background-color: #6ae4fc;
+}
+
+input:checked+.slider:before,
+input:checked+.slider-2:before {
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round,
+.slider-2.round {
+    border-radius: 34px;
+}
+
+.slider.round:before,
+.slider-2.round:before {
+    border-radius: 50%;
+}
