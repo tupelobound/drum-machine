@@ -1,6 +1,6 @@
 "use strict";
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() { }; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -13,7 +13,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Objec
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () { })); return true; } catch (e) { return false; } }
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 // Ensure FCC test suite is set to correct project
 var projectName = "drum-machine";
@@ -130,10 +130,10 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
           document.getElementById(event.target.id).children[1].currentTime = 0; // reset the audio
           document.getElementById(event.target.id).children[1].play(); // play the child audio element
           var element = _this.state.activeBank.filter(
-          // get the name of the pad from the bank
-          function (item) {
-            return item.id == document.getElementById(event.target.id).children[1].id;
-          });
+            // get the name of the pad from the bank
+            function (item) {
+              return item.id == document.getElementById(event.target.id).children[1].id;
+            });
           _this.setState({
             displayContent: element[0].name // set display to name of pad
           });
@@ -142,10 +142,10 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
           event.target.parentNode.children[1].currentTime = 0; // reset the audio
           event.target.parentNode.children[1].play(); // play the child audio element
           var _element = _this.state.activeBank.filter(
-          // get the name of the pad from the bank
-          function (item) {
-            return item.id == event.target.parentNode.children[1].id;
-          });
+            // get the name of the pad from the bank
+            function (item) {
+              return item.id == event.target.parentNode.children[1].id;
+            });
           _this.setState({
             displayContent: _element[0].name // set display to name of pad
           });
@@ -157,17 +157,18 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
         // check that power is on
         if (['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase())) {
           document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
+          document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
+          document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
+
+          var element = _this.state.activeBank.filter(
+            // get the name of the pad from the bank
+            function (item) {
+              return item.id == document.getElementById(event.key.toUpperCase()).id;
+            });
+          _this.setState({
+            displayContent: element[0].name // set display to name of pad
+          });
         }
-        document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
-        document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
-        var element = _this.state.activeBank.filter(
-        // get the name of the pad from the bank
-        function (item) {
-          return item.id == document.getElementById(event.key.toUpperCase()).id;
-        });
-        _this.setState({
-          displayContent: element[0].name // set display to name of pad
-        });
       }
     });
     _this.keyUp = document.addEventListener("keyup", function (event) {
@@ -286,39 +287,39 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
   _createClass(DrumMachine, [{
     key: "render",
     value:
-    // Render the app
-    function render() {
-      var _this2 = this;
-      // Dynamically create drum pad elements by mapping over array held in state
-      var pads = this.state.activeBank.map(function (item) {
-        return /*#__PURE__*/React.createElement(Pad, {
-          id: item.id,
-          url: item.url,
-          click: _this2.clickTrigger
+      // Render the app
+      function render() {
+        var _this2 = this;
+        // Dynamically create drum pad elements by mapping over array held in state
+        var pads = this.state.activeBank.map(function (item) {
+          return /*#__PURE__*/React.createElement(Pad, {
+            id: item.id,
+            url: item.url,
+            click: _this2.clickTrigger
+          });
         });
-      });
-      return /*#__PURE__*/React.createElement("div", {
-        id: "drum-machine"
-      }, /*#__PURE__*/React.createElement("div", {
-        id: "pad-container"
-      }, pads), /*#__PURE__*/React.createElement("div", {
-        id: "controls-container"
-      }, /*#__PURE__*/React.createElement("h2", null, "fCC Drum Machine"), /*#__PURE__*/React.createElement(Display, {
-        name: this.state.displayContent
-      }), /*#__PURE__*/React.createElement("p", {
-        className: "machine-text"
-      }, "Power on/off:"), /*#__PURE__*/React.createElement(Power, {
-        power: this.powerOnOff
-      }), /*#__PURE__*/React.createElement("p", {
-        className: "machine-text"
-      }, "Change bank:"), /*#__PURE__*/React.createElement(Switch, {
-        change: this.changeBank
-      }), /*#__PURE__*/React.createElement("p", {
-        className: "machine-text"
-      }, "Volume:"), /*#__PURE__*/React.createElement(Volume, {
-        change: this.handleVolumeChange
-      })));
-    }
+        return /*#__PURE__*/React.createElement("div", {
+          id: "drum-machine"
+        }, /*#__PURE__*/React.createElement("div", {
+          id: "pad-container"
+        }, pads), /*#__PURE__*/React.createElement("div", {
+          id: "controls-container"
+        }, /*#__PURE__*/React.createElement("h2", null, "fCC Drum Machine"), /*#__PURE__*/React.createElement(Display, {
+          name: this.state.displayContent
+        }), /*#__PURE__*/React.createElement("p", {
+          className: "machine-text"
+        }, "Power on/off:"), /*#__PURE__*/React.createElement(Power, {
+          power: this.powerOnOff
+        }), /*#__PURE__*/React.createElement("p", {
+          className: "machine-text"
+        }, "Change bank:"), /*#__PURE__*/React.createElement(Switch, {
+          change: this.changeBank
+        }), /*#__PURE__*/React.createElement("p", {
+          className: "machine-text"
+        }, "Volume:"), /*#__PURE__*/React.createElement(Volume, {
+          change: this.handleVolumeChange
+        })));
+      }
   }]);
   return DrumMachine;
 }(React.Component); // Define functional component for each drum pad

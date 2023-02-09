@@ -165,9 +165,9 @@ class DrumMachine extends React.Component {
             // check that power is on
             if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
                 document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
+                document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
+                document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
             }
-            document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
-            document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
             const element = this.state.activeBank.filter(
                 // get the name of the pad from the bank
                 item => item.id == document.getElementById(event.key.toUpperCase()).id
