@@ -169,7 +169,9 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
       }
     });
     _this.keyUp = document.addEventListener("keyup", function (event) {
-      document.getElementById(event.key.toUpperCase() + "-wrapper").classList.remove("active");
+      if (['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase())) {
+        document.getElementById(event.key.toUpperCase() + "-wrapper").classList.remove("active");
+      }
     });
     _this.changeBank = function () {
       if (_this.state.power) {

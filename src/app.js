@@ -178,7 +178,9 @@ class DrumMachine extends React.Component {
 
     // Function to listen for keyup to reset appearance of pads
     keyUp = document.addEventListener("keyup", event => {
-        document.getElementById(event.key.toUpperCase() + "-wrapper").classList.remove("active");
+        if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
+            document.getElementById(event.key.toUpperCase() + "-wrapper").classList.remove("active");
+        }
     });
 
     // Function to toggle between sound banks
