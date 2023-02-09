@@ -155,7 +155,9 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
     _this.keyTrigger = document.addEventListener("keydown", function (event) {
       if (_this.state.power) {
         // check that power is on
-        document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
+        if (['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase())) {
+          document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
+        }
         document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
         document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
         var element = _this.state.activeBank.filter(

@@ -163,7 +163,9 @@ class DrumMachine extends React.Component {
     keyTrigger = document.addEventListener("keydown", event => {
         if (this.state.power) {
             // check that power is on
-            document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
+            if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
+                document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
+            }
             document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
             document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
             const element = this.state.activeBank.filter(
