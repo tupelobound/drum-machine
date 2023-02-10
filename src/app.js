@@ -130,10 +130,10 @@ class DrumMachine extends React.Component {
 
     // Function to trigger sample when pad is clicked on using mouse
     clickTrigger = event => {
+        // check pad is powered on
         if (this.state.power) {
-            // check pad is powered on
+            // check div, not p is being clicked on
             if (event.target.className == "drum-pad") {
-                // check div, not p is being clicked on
                 document.getElementById(event.target.id).children[1].currentTime = 0; // reset the audio
                 document.getElementById(event.target.id).children[1].play(); // play the child audio element
                 const element = this.state.activeBank.filter(
@@ -161,8 +161,9 @@ class DrumMachine extends React.Component {
 
     // Function to listen for keystrokes
     keyTrigger = document.addEventListener("keydown", event => {
+        // check that power is on
         if (this.state.power) {
-            // check that power is on
+            // only execute if the keys required for app are pressed
             if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
                 document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
                 document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
@@ -180,6 +181,7 @@ class DrumMachine extends React.Component {
 
     // Function to listen for keyup to reset appearance of pads
     keyUp = document.addEventListener("keyup", event => {
+        // only execute if the keys required for app are pressed
         if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
             document.getElementById(event.key.toUpperCase() + "-wrapper").classList.remove("active");
         }
@@ -187,8 +189,8 @@ class DrumMachine extends React.Component {
 
     // Function to toggle between sound banks
     changeBank = () => {
+        // check power is on
         if (this.state.power) {
-            // check power is on
             if (this.state.activeBank == bankOne) {
                 // if bank one is activated:
                 this.setState({
@@ -239,8 +241,8 @@ class DrumMachine extends React.Component {
 
     // Function to handle volume change
     handleVolumeChange = event => {
+        // check app power is on
         if (this.state.power) {
-            // check app power is on
             this.setState({
                 volume: event.target.value, // set the app volume state
                 displayContent: "Volume: " + event.target.value // display volume
