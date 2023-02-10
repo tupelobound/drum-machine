@@ -160,16 +160,16 @@ var DrumMachine = /*#__PURE__*/function (_React$Component) {
           document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
           document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
           document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
-        }
 
-        var element = _this.state.activeBank.filter(
-        // get the name of the pad from the bank
-        function (item) {
-          return item.id == document.getElementById(event.key.toUpperCase()).id;
-        });
-        _this.setState({
-          displayContent: element[0].name // set display to name of pad
-        });
+          var element = _this.state.activeBank.filter(
+          // get the name of the pad from the bank
+          function (item) {
+            return item.id == document.getElementById(event.key.toUpperCase()).id;
+          });
+          _this.setState({
+            displayContent: element[0].name // set display to name of pad
+          });
+        }
       }
     });
     _this.keyUp = document.addEventListener("keyup", function (event) {

@@ -164,25 +164,27 @@ class DrumMachine extends React.Component {
         // check that power is on
         if (this.state.power) {
             // only execute if the keys required for app are pressed
-            if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
+            if (['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase())) {
                 document.getElementById(event.key.toUpperCase() + "-wrapper").classList.add("active");
                 document.getElementById(event.key.toUpperCase()).currentTime = 0; // reset the audio to beginning
                 document.getElementById(event.key.toUpperCase()).play(); // play the matching audio
+
+                const element = this.state.activeBank.filter(
+                    // get the name of the pad from the bank
+                    item => item.id == document.getElementById(event.key.toUpperCase()).id
+                );
+                this.setState({
+                    displayContent: element[0].name // set display to name of pad
+                });
             }
-            const element = this.state.activeBank.filter(
-                // get the name of the pad from the bank
-                item => item.id == document.getElementById(event.key.toUpperCase()).id
-            );
-            this.setState({
-                displayContent: element[0].name // set display to name of pad
-            });
+
         }
     });
 
     // Function to listen for keyup to reset appearance of pads
     keyUp = document.addEventListener("keyup", event => {
         // only execute if the keys required for app are pressed
-        if ( ['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase()) ) {
+        if (['Q', 'W', 'E', 'A', 'S', 'D', 'Z', 'X', 'C'].includes(event.key.toUpperCase())) {
             document.getElementById(event.key.toUpperCase() + "-wrapper").classList.remove("active");
         }
     });
