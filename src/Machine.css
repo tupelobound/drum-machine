@@ -15,7 +15,7 @@
     );
   border-radius: 25px;
   box-shadow: 12px 12px 40px, inset 10px -20px 40px #1d1f20;
-  }
+}
 
 #pad-container {
   display: grid;
