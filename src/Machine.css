@@ -1,0 +1,60 @@
+#drum-machine {
+    width: 800px;
+    height: 490px;
+    margin: 0 auto;
+    background-color: #767064;
+    display: grid;
+    grid-template-columns: 490px auto;
+    justify-items: center;
+    background:
+      linear-gradient(
+        to top,
+      #3A3732,
+      #555555 96%,
+      #8f8d8a 98%,
+      #555555);
+    border-radius: 25px;
+    box-shadow: 12px 12px 40px, inset 10px -20px 40px #1d1f20;
+  }
+
+  #pad-container {
+    display: grid;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.drum-pad {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Turret Road', cursive;
+  color: #DED9D5;
+  font-size: 20px;
+  height: 120px;
+  width: 120px;
+  background: linear-gradient(to top,
+          #161514,
+          #2A2829);
+  border-radius: 10px;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+  border-top: 2px solid black;
+}
+
+.drum-pad:active,
+.drum-pad.active {
+    border-top: 3px solid black;
+    border-bottom: 5px solid black;
+    background: linear-gradient(to top,
+            #161514,
+            #2A2829 70%);
+    height: 118px;
+}
+
+a {
+  text-decoration: none;
+}

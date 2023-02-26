@@ -1,0 +1,15 @@
+#display {
+  height: 60px;
+  width: 250px;
+  border-width: 12px;
+  border-style: solid;
+  border-color: #282626 #282626 #383535 #282626;
+  border-radius: 10px;
+  background:
+    linear-gradient(to bottom left,
+    #3d62B0,
+    #5ca4ff);
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  margin-right: 20px;
+}
