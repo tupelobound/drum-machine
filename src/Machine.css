@@ -6,13 +6,13 @@
   display: grid;
   grid-template-columns: 490px auto;
   justify-items: center;
-  background:
+  background-color:
     linear-gradient(
       to top,
-    #3A3732,
-    #555555 96%,
-    #8f8d8a 98%,
-    #555555
+      #3a3732,
+      #555 96%,
+      #8f8d8a 98%,
+      #555
     );
   border-radius: 25px;
   box-shadow: 12px 12px 40px, inset 10px -20px 40px #1d1f20;
@@ -36,11 +36,11 @@
   font-size: 20px;
   height: 120px;
   width: 120px;
-  background:
+  background-color:
     linear-gradient(
       to top,
-    #161514,
-    #2A2829
+      #161514,
+      #2a2829
     );
   border-radius: 10px;
   border-left: 4px solid black;
@@ -57,7 +57,8 @@
       linear-gradient(
         to top,
         #161514,
-      #2A2829 70%);
+        #2a2829 70%
+      );
     height: 118px;
 }
 
