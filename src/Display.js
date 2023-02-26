@@ -1,13 +1,17 @@
-import './Display.css';
+import './Display.css'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Display = ({ name }) => {
-    // return JSX component
-    return (
+  Display.propTypes = {
+    name: PropTypes.string.isRequired
+  }
+  // return JSX component
+  return (
         <div id="display">
             <p>{name}</p>
         </div>
-    );
-};
+  )
+}
 
-export default Display;
-
+export default Display

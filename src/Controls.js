@@ -1,12 +1,22 @@
-import './Controls.css';
-import PowerButton from './PowerButton';
-import Display from './Display';
-import BankButton from './BankButton';
-import Volume from './Volume';
+import './Controls.css'
+import PowerButton from './PowerButton'
+import Display from './Display'
+import BankButton from './BankButton'
+import Volume from './Volume'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Controls = ({ bank, setBank, powerStatus, setPowerStatus, displayMessage, setDisplayMessage }) => {
-    // return JSX component
-    return (
+  Controls.propTypes = {
+    bank: PropTypes.array.isRequired,
+    setBank: PropTypes.func.isRequired,
+    powerStatus: PropTypes.bool.isRequired,
+    setDisplayMessage: PropTypes.func.isRequired,
+    setPowerStatus: PropTypes.func.isRequired,
+    displayMessage: PropTypes.string.isRequired
+  }
+  // return JSX component
+  return (
         <div id="controls-container">
             <h2>fCC Drum Machine</h2>
             <Display name={displayMessage} />
@@ -29,7 +39,7 @@ const Controls = ({ bank, setBank, powerStatus, setPowerStatus, displayMessage, 
                 setDisplayMessage={setDisplayMessage}
             />
         </div>
-    );
+  )
 }
 
-export default Controls;
+export default Controls
