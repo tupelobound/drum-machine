@@ -2,11 +2,10 @@
   width: 800px;
   height: 490px;
   margin: 0 auto;
-  background-color: #767064;
   display: grid;
   grid-template-columns: 490px auto;
   justify-items: center;
-  background-color:
+  background:
     linear-gradient(
       to top,
       #3a3732,
@@ -36,7 +35,7 @@
   font-size: 20px;
   height: 120px;
   width: 120px;
-  background-color:
+  background:
     linear-gradient(
       to top,
       #161514,
@@ -51,15 +50,15 @@
 
 .drum-pad:active,
 .drum-pad.active {
-    border-top: 3px solid black;
-    border-bottom: 5px solid black;
-    background:
-      linear-gradient(
-        to top,
-        #161514,
-        #2a2829 70%
-      );
-    height: 118px;
+  border-top: 3px solid black;
+  border-bottom: 5px solid black;
+  background:
+    linear-gradient(
+      to top,
+      #161514,
+      #2a2829 70%
+    );
+  height: 118px;
 }
 
 a {
