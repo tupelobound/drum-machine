@@ -1,4 +1,7 @@
 # drum-machine
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/62a5c1e27f7140278de6fa2de30ca314)](https://www.codacy.com/gh/tupelobound/drum-machine/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tupelobound/drum-machine&amp;utm_campaign=Badge_Grade)
+
 freeCodeCamp Front End Development Libraries project - Build a Drum Machine
 
 This project was completed as part of freeCodeCamp's Front End Development Libraries certificate.
